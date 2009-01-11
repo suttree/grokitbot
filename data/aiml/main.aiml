@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<aiml>
+
+<!-- Free software &copy; 2001-2003 ALICE A.I. Foundation. -->
+<!-- This program is open source code released under -->
+<!-- the terms of the GNU General Public License     -->
+<!-- as published by the Free Software Foundation.   -->
+<!-- Complies with AIML 1.01 Tag Set Specification -->
+<!-- as adopted by the ALICE A.I. Foundation.  -->
+<!-- Annotated Version updated September 2003 -->
+
+<!--
+
+This is a topic-less file for responses that need to 
+be available to the bot without any learning.
+
+-->
+
+<!-- Forget about it -->
+<category>
+<pattern>NEVER MIND</pattern>
+<template>
+<srai>NEVERMIND</srai>
+</template>
+</category>
+
+<category>
+<pattern>NEVERMIND</pattern>
+<template>
+<think><set name="handler">NEVERMIND</set></think>
+</template>
+</category>
+
+<!-- Save the bayesian brain file -->
+<category>
+<pattern>* SAVE BRAIN</pattern>
+<template>
+<srai>SAVE BRAIN</srai>
+</template>
+</category>
+
+<category>
+<pattern>SAVE BRAIN *</pattern>
+<template>
+<srai>SAVE BRAIN</srai>
+</template>
+</category>
+
+<category>
+<pattern>SAVE_BRAIN</pattern>
+<template>
+<srai>SAVE BRAIN</srai>
+</template>
+</category>
+
+<category>
+<pattern>SAVEBRAIN</pattern>
+<template>
+<srai>SAVE BRAIN</srai>
+</template>
+</category>
+
+<category>
+<pattern>SAVE BRAIN</pattern>
+<template>
+<think><set name="handler">SAVEBRAIN</set></think>
+</template>
+</category>
+
+<!--
+So that we can teach the bot that x means z if it already
+think that x means y, use 'learn y' to associate x with y,
+without having to first get the bot into an 'UNKNOWN' state.
+-->
+<category>
+<pattern>LEARN *</pattern>
+<template>
+OK, what does '<star/>' mean?
+<think><set name="meaning"><star/></set></think>
+<system>data/scripts/generate_training.py <get name="player1"/> "<star/>"</system>
+<learn>data/aiml/training/<get name="player1"/>.aiml</learn>
+<think><set name="handler">TRAINING</set></think>
+</template>
+</category>
+
+<!-- So that we can forget stuff, when things go wrong, as they will -->
+<category>
+<pattern>FORGET THAT *</pattern>
+<template>
+<think><set name="meaning"><star/></set></think>
+<srai>FORGET</srai>
+</template>
+</category>
+
+<category>
+<pattern>FORGET *</pattern>
+<template>
+<think><set name="meaning"><star/></set></think>
+<srai>FORGET</srai>
+</template>
+</category>
+
+<category>
+<pattern>FORGET</pattern>
+<template>
+<random>
+<li>consider it done</li>
+<li>ok, it's forgotten</li>
+<li>forgotten</li>
+</random>
+<think><set name="handler">FORGET</set></think>
+</template>
+</category>
+
+<!-- Reload aiml files, handy for quick development changes -->
+<category>
+<pattern>RELOAD *</pattern>
+<template>
+<srai>RELOAD</srai>
+</template>
+</category>
+
+<category>
+<pattern>* RELOAD</pattern>
+<template>
+<srai>RELOAD</srai>
+</template>
+</category>
+
+<category>
+<pattern>RELOAD</pattern>
+<template>
+<random>
+<li>good as new</li>
+<li>all done</li>
+<li>finito!</li>
+</random>
+<learn>data/aiml/*.aiml</learn>
+</template>
+</category>
+
+</aiml>

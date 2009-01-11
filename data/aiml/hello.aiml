@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<aiml>
+
+<!-- Free software &copy; 2001-2003 ALICE A.I. Foundation. -->
+<!-- This program is open source code released under -->
+<!-- the terms of the GNU General Public License     -->
+<!-- as published by the Free Software Foundation.   -->
+<!-- Complies with AIML 1.01 Tag Set Specification -->
+<!-- as adopted by the ALICE A.I. Foundation.  -->
+<!-- Annotated Version updated September 2003 -->
+
+<topic name="HELLO">
+
+<category>
+<pattern>*</pattern> 
+<template> 
+<srai>HELLO</srai>
+</template> 
+</category> 
+ 
+<category>
+<pattern>HELLO</pattern>
+<template>
+<random>
+<li>Hello <get name="player1" /></li>
+<li>lo</li>
+<li>elo</li>
+<li>:)</li>
+<li>hello</li>
+<li>hi</li>
+<li>Hi</li>
+<li>Hallo Pooh</li>
+</random>
+</template>
+</category>
+
+</topic>
+
+</aiml>

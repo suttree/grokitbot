@@ -1,0 +1,31 @@
+GrokItBot depends on PyAIML, Reverend Bayes, Twisted and Python.
+
+Download them from the following locations:
+
+PyAIML: http://pyaiml.sourceforge.net/
+Reverend Bayes: http://www.divmod.org/Home/Projects/Reverend/
+Twisted: http://twistedmatrix.com/
+
+Then install each component (usually python setup.py install) before running GrokItBot.
+
+Note, you may run into an error in the PyAIML Kernel that looks like this:
+
+"exceptions.IOError: [Errno 0]"
+
+The solution is to edit the relevant Kernel.py file and add in a sleep statement where the file IO is having problems.
+
+For me, this file was in /Library/Python/2.5/site-packages/aiml/Kernel.py and here's how it looks now:
+
+    response = "" 
+    try: 
+        out = os.popen(command)
+    except RuntimeError, msg: 
+        if self._verboseMode:
+            err = "WARNING: RuntimeError while processing \"system\" element:\n%s\n" % msg.encode(self._textEncoding, 'replace')
+            sys.stderr.write(err)
+        return "There was an error while computing my response.  Please inform my botmaster."
+    time.sleep(0.1) # added by Duncan Gough - 10/01/09
+
+
+Note the added time.sleep(0.1)
+- Duncan Gough 11/01/09

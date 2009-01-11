@@ -1,0 +1,30 @@
+<aiml version="1.0">
+
+<category>
+<pattern>BOOTSTRAP</pattern>
+<template>
+Interpreter Version Info: <version/>
+<think>
+
+<srai>LOAD AIML B</srai>
+
+</think>
+</template>
+</category>
+
+<!-- This category works with the Standard AIML Set -->
+<category>
+<pattern>LOAD AIML B</pattern>
+<template>
+<!-- only allow this operation if the "secure" predicate is set to yes. -->
+<condition name="secure">
+    <li value="yes">
+        <!-- Load some key files to integrate AIMLBot with AIMLBayes -->
+        <learn>data/aiml/*.aiml</learn>
+    </li>
+    <li>You are not permitted to load AIML sets.</li>
+</condition>
+</template>
+</category>
+
+</aiml>

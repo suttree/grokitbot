@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<aiml>
+
+<!-- Free software &copy; 2001-2003 ALICE A.I. Foundation. -->
+<!-- This program is open source code released under -->
+<!-- the terms of the GNU General Public License     -->
+<!-- as published by the Free Software Foundation.   -->
+<!-- Complies with AIML 1.01 Tag Set Specification -->
+<!-- as adopted by the ALICE A.I. Foundation.  -->
+<!-- Annotated Version updated September 2003 -->
+
+<topic name="THANKS">
+
+<category>
+<pattern>*</pattern>
+<template>
+<random>
+<li>k</li>
+<li>np</li>
+<li>no problem</li>
+</random>
+</template>
+</category>
+
+</topic>
+
+</aiml>

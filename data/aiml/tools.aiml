@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<aiml>
+
+<!-- Free software &copy; 2001-2003 ALICE A.I. Foundation. -->
+<!-- This program is open source code released under -->
+<!-- the terms of the GNU General Public License     -->
+<!-- as published by the Free Software Foundation.   -->
+<!-- Complies with AIML 1.01 Tag Set Specification -->
+<!-- as adopted by the ALICE A.I. Foundation.  -->
+<!-- Annotated Version updated September 2003 -->
+
+<topic name="TOOLS">
+		
+<category>
+<pattern>* UPTIME</pattern>
+<template>
+<srai>UPTIME</srai>
+</template>
+</category>
+
+<category>
+<pattern>UPTIME *</pattern>
+<template>
+<srai>UPTIME</srai>
+</template>
+</category>
+
+<!--
+This is just a simple example of how you can call
+scripts from within the AIML once you have connected the
+topic with enough keywords for the bayes parser to guess correctly.
+-->
+<category>
+<pattern>UPTIME</pattern>
+<template>
+<system>data/scripts/tools.py uptime</system>
+</template>
+</category>
+
+</topic>
+
+</aiml>
