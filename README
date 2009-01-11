@@ -1,0 +1,21 @@
+GrokItBot is an IRC bot that uses the popular AIML framework to mimic human conversational responses.
+Since the AIML files can quickly become verbose, GrokItBot uses the Reverend Thomas Bayesian parser 
+from DivMod to cut down on the amount of AIML needed. By guessing what the topic of conversation is, 
+GrokItBot is able to reduce a large number of possible inputs down to a much smaller selection of topics.
+
+GrokItBot is also able to learn, and makes the most of the excellently hackable AIML syntax to be as 
+dynamic as possible. The best place to learn more about GrokItBot is on my website:
+
+http://suttree.com/code/GrokItBot/
+
+Running GrokItBot:
+
+You can run GrokItBot with just he defaults, like this:
+
+./GrokItBot.py
+
+Or you can pass in some options, like this:
+
+./GrokItBot.py <nickname> <channel> <password>
+
+- Duncan Gough 11/01/09
