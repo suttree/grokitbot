@@ -3,7 +3,7 @@ GrokItBot depends on PyAIML, Reverend Bayes, Twisted and Python.
 Download them from the following locations:
 
 PyAIML: http://pyaiml.sourceforge.net/
-Reverend Bayes: http://www.divmod.org/Home/Projects/Reverend/
+Reverend Bayes: http://divmod.org/trac/wiki/DivmodReverend
 Twisted: http://twistedmatrix.com/
 
 Then install each component (usually python setup.py install) before running GrokItBot.
